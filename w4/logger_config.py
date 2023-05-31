@@ -20,6 +20,10 @@ class Logger:
         # Create formatters and add it to handlers
         ######################################## YOUR CODE HERE ##################################################
         # set the logging formatter to the f_handler
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s %(message)s')
+        self.f_handler.setFormatter(formatter)
+        self.logger.addHandler(self.f_handler)
+        self.logger.setLevel(logging.DEBUG)
         ######################################## YOUR CODE HERE ##################################################
 
         ######################################## YOUR CODE HERE ##################################################
@@ -27,22 +31,22 @@ class Logger:
         ######################################## YOUR CODE HERE ##################################################
 
     def warning(self, msg):
-        pass
+        self.logger.warning(msg)
         ######################################## YOUR CODE HERE ##################################################
         ######################################## YOUR CODE HERE ##################################################
 
     def error(self, msg):
-        pass
+        self.logger.error(msg)
         ######################################## YOUR CODE HERE ##################################################
         ######################################## YOUR CODE HERE ##################################################
 
     def info(self, msg):
-        pass
+        self.logger.info(msg)
         ######################################## YOUR CODE HERE ##################################################
         ######################################## YOUR CODE HERE ##################################################
 
     def debug(self, msg):
-        pass
+        self.logger.debug(msg)
         ######################################## YOUR CODE HERE ##################################################
         ######################################## YOUR CODE HERE ##################################################
 
